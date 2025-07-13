@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CYBLEND | Energía Saludable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <!-- Google Analytics 4 (Reemplaza 'G-XXXXXXXXXX' con tu ID real) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+
+    // Seguimiento de clics en botones
+    function trackEvent(action, label) {
+      gtag('event', action, {
+        event_category: 'Interacción Usuario',
+        event_label: label
+      });
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0a1a;
+      color: #00ffe7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .background-glow, .floating-neon, .led-rays {
+      position: fixed;
+      z-index: -1;
+    }
+    .background-glow {
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,255,255,0.08) 0%, transparent 80%);
+      animation: pulse 5s infinite alternate;
+    }
+    .floating-neon {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #00ffe7 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 12s infinite linear;
+    }
+    .led-rays {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 0%, #00ffe7 50%, transparent 100%);
+      animation: rays 2s infinite;
+      transform: translateX(-50%);
+      opacity: 0.3;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); opacity: 0.4; }
+      to { transform: scale(1.2); opacity: 0.8; }
+    }
+    @keyframes float {
+      0% { top: 5%; left: 10%; }
+      50% { top: 15%; left: 75%; }
+      100% { top: 5%; left: 10%; }
+    }
+    @keyframes rays {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 0% 100%; }
+    }
+    .container {
+      max-width: 450px;
+      width: 100%;
+      background: rgba(15,15,40,0.92);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ffe7, inset 0 0 10px #00ffe7;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffe7;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: #99ffff;
+      margin-bottom: 15px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      background: #00ffe7;
+      color: #0a0a1a;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ffe7;
+    }
+    .btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #00ffe7;
+    }
+    .footer {
+      margin-top: 25px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-glow"></div>
+  <div class="floating-neon"></div>
+  <div class="led-rays"></div>
+
+  <div class="container">
+    <h1>CYBLEND</h1>
+    <div class="subtitle">Activa tu cuerpo. Eleva tu mente.</div>
+
+    <a class="btn" href="https://www.instagram.com/cyblend_pal" 
+       target="_blank" 
+       onclick="trackEvent('click', 'Instagram')">🌐 Ver Instagram</a>
+
+    <a class="btn" href="https://wa.me/573127700881?text=Hola,%20quiero%20más%20info%20sobre%20CYBLEND" 
+       target="_blank"
+       onclick="trackEvent('click', 'WhatsApp')">💬 Escríbenos por WhatsApp</a>
+
+    <div class="footer">Hecho con 💙 en Palmira, Colombia</div>
+  </div>
+
+</body>
+</html>
